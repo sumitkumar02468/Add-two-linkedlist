@@ -15,11 +15,11 @@ scanf("%d",&head->data);
 ptr=head;
 for(int i=1;i<n;i++)
 {
-newnode=(struct node*)malloc(sizeof(struct node));
-scanf("%d",&newnode->data);
-newnode->next=NULL;
-ptr->next=newnode;
-ptr=ptr->next;
+  newnode=(struct node*)malloc(sizeof(struct node));
+  scanf("%d",&newnode->data);
+  newnode->next=NULL;
+  ptr->next=newnode;
+  ptr=ptr->next;
 }
 ptr=head;
 return ptr;
@@ -31,9 +31,9 @@ int lltono(struct node *head)
 int num=0,temp=0;
 while(head!=NULL)
 {
-num=num*10;
-num=num+head->data;
-head=head->next;
+  num=num*10;
+  num=num+head->data;
+  head=head->next;
 }
 return num;
 }
@@ -46,11 +46,11 @@ int num=0,rev=0,n1=0,temp=0;
 n1=n;
 while(n1>0)
 {
-rev=rev*10;
-rev+=n1%10;
-if(rev==0)
+  rev=rev*10;
+  rev+=n1%10;
+  if(rev==0)
 {
-temp=1;
+temp++;
 }
 n1=n1/10;
 }
@@ -62,22 +62,23 @@ n=n/10;
 ptr=head;
 while(n>0)
 {
-num=0;
-num=n%10;
-nnode=(struct node*)malloc(sizeof(struct node));
-nnode->next=NULL;
-nnode->data=num;
-ptr->next=nnode;
-ptr=ptr->next;
-n=n/10;
+  num=0;
+  num=n%10;
+  nnode=(struct node*)malloc(sizeof(struct node));
+  nnode->next=NULL;
+  nnode->data=num;
+  ptr->next=nnode;
+  ptr=ptr->next;
+  n=n/10;
 }
-if(temp==1)
+while(temp>0)
 {
-nnode=(struct node*)malloc(sizeof(struct node));
-nnode->next=NULL;
-nnode->data=0;
-ptr->next=nnode;
-ptr=ptr->next;
+  nnode=(struct node*)malloc(sizeof(struct node));
+  nnode->next=NULL;
+  nnode->data=0;
+  ptr->next=nnode;
+  ptr=ptr->next;
+  temp--;
 }
 ptr=head;
 return ptr;
@@ -88,8 +89,8 @@ void printll(struct node *head)
 {
 while(head!=NULL)
 {
-printf("%d ",head->data);
-head=head->next;
+  printf("%d ",head->data);
+  head=head->next;
 }
 }
 
